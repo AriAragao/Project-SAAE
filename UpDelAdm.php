@@ -33,10 +33,26 @@
         if(isset($_POST['altAdm'])){
 
             $cpf = $_POST['InpCpfAdm'];
-            $senha=$_POST['inpSenhaAdm'];
+           
 
             $adm->setCpf($cpf);
-            $adm->VerificacaoCpf();
+            
+            $result=$adm->VerificacaoCpf();
+
+            if(result==1){
+
+                header('Location: altAdm.php');
+                echo $result;
+
+
+            }else{ ?>
+
+                 <script>
+
+            alert("CPF incorreto!");
+
+            </script>
+           <?php }
     
             
              
