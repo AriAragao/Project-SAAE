@@ -7,10 +7,10 @@
 class AdmBd {
     
         protected $table = 'adm';
-        private $nomeAdm;
+        private $nome;
         private  $cpf;
-        private $senhaAdm;
-        private $permissao;
+        private $senha;
+        
 
 
         public function setNome($nome) {
@@ -55,25 +55,25 @@ class AdmBd {
 
         }
 
-        public function Verificacao(){ //
+        public function Verificacao(){ 
 
-            $conn = new conexao();
+            $conn = new Conexao();
             $link = $conn->Conecta();
 	
 
-           $result_adm = "SELECT * FROM adm WHERE usuario= '$nomeAdm' AND senha= '$senhaAdm' LIMIT 1";
+           $result_adm = "SELECT * FROM adm WHERE cpf= '$cpf' LIMIT 1";
            $resultado_adm = mysqli_query($link, $result_adm) or die (mysqli_error($link));
            $row_adm = mysqli_fetch_assoc($resultado_adm);
            
            
 
-           if(($this->nome ==$row_adm['usuario'])&&($this->senha==$row_adm['senha'])){
+           if(($this->cpf==$row_adm['cpf'])){
                
-               $verificacao = $this->nomeAdm;
+               $verificacao = 1;
 
            }else{
 
-              $verificacao = "nenhum";
+              $verificacao = 0;
 				}				
 
 
