@@ -1,6 +1,6 @@
 <?php 
 
-    require_once 'Class/AdmBd.class.php'; 
+     require_once 'Class/AdmBd.class.php'; 
 
 ?>
 
@@ -23,24 +23,7 @@
 
 	<?php
         
-        $adm = new AdmBd();
-            if(isset($_POST['btCadastrarEst'])):
-                
-                
-                $nome= $_POST['inpNomeUs'];
-                $cpf= $_POST['InpCpfUs'];
-                $senha= $_POST['inpSenhaUs'];
-                $permissao= $_POST['InpSenhaP'];
-                
-                $acesso=123456;
-                if($permissao== $acesso){
-                    
-                    $adm->setNome($nome);
-                    $adm->setCpf($cpf);
-                    $adm->setSenha($senha);
-                    $adm->insert();
-                }
-            endif;
+      
              
         
         ?>
@@ -80,7 +63,7 @@
 	
     <div id="divCabcalhoFormP">
 
-                <label id="lbCadProf">Cadastrar Administrador</label>
+                <label id="lbCadProf">Administrador principal</label>
             </div>
         <div id="divFormP">
 

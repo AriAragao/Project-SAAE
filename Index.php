@@ -1,8 +1,7 @@
 <?php
 
-    session_start();
-    require_once '../classes/AdmBd.class.php';
-   
+   require_once 'Class/AdmBd.class.php'; 
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,7 @@
 <body>
 
     <?php
-     $adm = new AdmBd;
+     //$adm = new AdmBd;
 
        if(isset($_POST['btLogar'])){
            
@@ -95,10 +94,8 @@
                         
                         <a href="UpDelAdm.php" id="refEsqueci"> Opções do administrador</a>
                         
-                        <?php if(isset($_SESSION['loginErro'])){
-				echo $_SESSION['loginErro'];
-				unset($_SESSION['loginErro']);
-			}?>
+                        
+			
                         
 		</form>
 

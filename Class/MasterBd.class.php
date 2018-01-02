@@ -1,21 +1,23 @@
 <?php 
 
-  require_once 'Class/Conexao.class.php'; 
+
+
+require_once '../classes/conexao.class.php';
 
  
    
-class AdmBd {
+class MasterBd {
     
         protected $table = 'adm';
         private $nomeAdm;
-        private  $cpf;
+        private  $cpf;//dados da tabela
         private $senhaAdm;
         private $permissao;
 
 
         public function setNome($nome) {
 
-            $this->nome= $nome;
+            $this->nomeAdm= $nome;
         }
 
         public function setCpf($cpf) {
@@ -25,7 +27,7 @@ class AdmBd {
 
         public function setSenha($senha) {
 
-            $this->senha= $senha;
+            $this->senhaAdm= $senha;
         }
 
         public function setPermissao($permissao) {
@@ -36,7 +38,7 @@ class AdmBd {
 
         public function insert() {
 
-           $conn = new Conexao();
+           $conn = new conexao();
            $link = $conn->Conecta();
 
             $sql=mysqli_query($link,"INSERT INTO adm (cpf,usuario,senha) VALUES ('$this->cpf','$this->nome','$this->senha')") or die("Não foi possivel inserir os dados no banco de dados: ".mysql_error()."<br>");

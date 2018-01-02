@@ -1,7 +1,6 @@
 <?php 
 
-    require_once '../classes/EstagiarioBd.class.php';
-
+    require_once 'Class/AdmBd.class.php'; 
 ?>
 
 <!DOCTYPE html>

@@ -1,7 +1,9 @@
 <?php 
 
     
-    require_once '../classes/AdmBd.class.php';
+     require_once 'Class/AdmBd.class.php';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -26,16 +28,22 @@
     
         
         $adm = new AdmBd(); 
-        $cpf = $_POST['InpCpfAdm'];
+        
        
         if(isset($_POST['altAdm'])){
 
+            $cpf = $_POST['InpCpfAdm'];
+            $senha=$_POST['inpSenhaAdm'];
+
             $adm->setCpf($cpf);
-            $result_verificacao=$adm->VerificacaoCpf();
+            $adm->VerificacaoCpf();
     
-            echo $result_verificacao;
+            
              
-         }?>        
+         }
+
+
+    ?>        
     
     
 	

@@ -1,7 +1,8 @@
 
 <?php 
 
-    require_once '../classes/CursoBd.class.php';
+    //require_once '../classes/CursoBd.class.php';
+ require_once 'Class/AdmBd.class.php'; 
 ?>
 
 <!DOCTYPE html>

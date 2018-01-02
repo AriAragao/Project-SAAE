@@ -23,25 +23,7 @@
 
 	<?php
         
-        $adm = new AdmBd();
-            if(isset($_POST['btCadastrarEst'])):
-                
-                
-                $nome= $_POST['inpNomeUs'];
-                $cpf= $_POST['InpCpfUs'];
-                $senha= $_POST['inpSenhaUs'];
-                $permissao= $_POST['InpSenhaP'];
-                
-                $acesso=123456;
-                if($permissao== $acesso){
-                    
-                    $adm->setNome($nome);
-                    $adm->setCpf($cpf);
-                    $adm->setSenha($senha);
-                    $adm->insert();
-                }
-            endif;
-             
+        
         
         ?>
     <div id="Divtopo">
@@ -107,7 +89,11 @@
 
                <button id="btVoltarProf"><a href="Index.php" >Voltar</a></button>
 
-               
+              
+                <button id="EditarEmp" name="EditarEmp"> Atualizar</button>
+                <button id="btVoltarEmp"><a href="pgEmpresa.php" class="ativa">Voltar</a></button>
+
+              
 
 
              </form>
