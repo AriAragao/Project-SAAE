@@ -1,0 +1,699 @@
+
+
+/*================================================Configuração das páginas em geral==========================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: baseline;
+}
+
+#Divtopo{
+
+	background-color: #e5eae7;
+	height: 30px;
+	
+}
+
+#logoIf{
+
+	width: 25px;
+	height: 23px;
+	margin-left: 30px;
+	margin-top: 4px;
+}
+
+#lbIfba{
+
+	color:#606060;
+	font-family: inherit;
+
+
+
+}
+
+#DivInicio{
+
+	background-color: #006600;
+	height: 155px;
+	font-size: 1.2em;		
+}
+
+#DivTitulos{
+
+	margin-left: 60px;
+	float: left;
+    width: 70%;
+    margin-top: 30px;
+    
+}
+
+#DivTitulosPrincipal{
+
+	margin-left: 60px;
+	float: left;
+    width: 90%;
+    margin-top: 30px;
+    
+}
+
+ul#listaMenu a.ativa{
+
+	border-bottom:3px solid yellow;
+	color: yellow;
+	padding-bottom: 10px;
+	
+	}
+
+#titulo,#tituloCompleto,#tituloCoes{
+
+	color:white;
+}
+
+#tituloCompleto{
+
+	font-family: "open_sansextrabold", Arial, Helvetica, sans-serif;
+	font-weight: normal; /*pesquisar*/
+	line-height: 1em;
+	font-size: 38px;/*45*/
+    margin-top: 50px;
+}
+
+#tituloCoes{
+
+	font-size: 12px;
+	position: absolute;
+	top: 170px;
+}
+#titulo{
+
+	
+	 top: 75px;
+	 position: absolute;
+
+}
+
+#DivMenu{
+
+	background-color: #0A5517;
+	height: 40px; 
+}
+
+ul#listaMenu{
+
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	display: block;
+	font-size: 0.88em;
+	list-style: none;
+	padding-left:0px;
+    margin-top:-2px;
+
+}
+
+ul#listaMenu li { /*config da lista do menu*/
+	
+	float:left; 
+	margin-right:30px; /*Margem direita*/
+	font-family:Arial, Helvetica, sans-serif;
+	margin-top: 10px;
+	color: white;
+	
+}
+ul#listaMenu a{ /*Configuração dos links*/
+
+	text-decoration: none;
+	color: white;	
+
+}
+
+#DivCorpo{
+
+/*background-color: red;*/
+
+
+}
+
+ th, td{
+
+		border: 1px solid;
+
+	}
+        
+
+
+
+/*=============================================================LOGIN=========================================================================*/
+
+
+#MsgInicial{
+
+	color:red;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	margin-left: 17px;
+
+}
+
+
+#DivLogin{
+	
+
+	Height: 320px;
+    Width: 500px;
+    margin-top: 60px;
+    margin-left: 450px;
+    box-shadow: 1px 1px 2px 1px;
+
+    		 	
+}
+
+#inpNomeAdm,#inpSenhaLogin,#lbUsuario,#lbSenha{
+
+	width: 200px;
+	margin-left: 140px;
+
+}
+
+#imgLogin{
+
+	padding-left: 160px;
+	margin-top:0px;
+}
+
+#btLogar{
+
+	margin-left: 170px; 
+	width: 70px;
+}
+
+/*============================================================PAGE CADASTRAR ADM=====================================================================*/
+
+#refEsqueci{
+    
+    font-size: 12px;
+    color: red;
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 70px;
+}
+
+
+/*============================================================PAGE ALTERAR ADM=====================================================================*/
+
+#lbAltSenha{
+
+		color: #0A5517;
+		font-size: 25px;
+		font-family: "open_sansextrabold", Arial, Helvetica, sans-serif;
+		margin-left: 210px;
+		margin-top: 15px;
+		position: absolute;
+
+	}
+        
+        #InpCpfAdm{
+            
+           margin-left: 13px;
+            margin-top: 40px;
+            
+        }
+        
+        #inpSenhaAdm{
+            
+            
+        }
+        
+        #lbSenhaAdm,#lbCpfAdm{
+            
+            margin-left:150px; 
+            
+        }
+        
+/*============================================================PAGE ESTÁGIO=====================================================================*/
+
+
+	#pesquisaEst{
+
+		margin-top: 10px;
+		margin-left: 150px;
+	}
+
+	#btCadEst{
+
+		
+
+	}
+
+	#divTabela{
+
+		margin-top: 35px;
+		width: 1230px;/*1350px*/
+		margin-left: 25px;/*6PX*/
+
+		
+	}
+
+	#btCadEst1{
+
+		margin-left: 1020px;
+		margin-top: 35px;
+		position: absolute;
+
+	}
+
+/*===========================================================PAGE CADASTRAR ESTAGIO==========================================================*/
+	
+	#divCabcalhoForm{
+
+		border: 1px solid;
+		height: 50px;
+		margin-top: 60px;
+		margin-left: 20px;
+		margin-right: 20px;
+		height: 40px;
+		border-color: #006600;
+		
+
+	}
+
+	#divFormEst{
+
+		border: 1px solid;
+		height: 250px;
+		margin-top: 0px;
+		margin-left: 20px;
+		margin-right: 20px;
+		padding-top: 30px;
+		border-color: #006600;
+		
+	}
+
+	#divOrgForm{
+
+		margin-left: 70px;
+	}
+
+	#lbCadEst{
+
+		color: #0A5517;
+		font-size: 25px;
+		font-family: "open_sansextrabold", Arial, Helvetica, sans-serif;
+		margin-left: 1000px;
+		margin-top: 10px;
+		position: absolute;
+
+	}
+
+	 #lbCpfEst,#lbNascimentoEst,#lbModalidadeEst,#lbPisEst,
+	 #lbAnoEst,#lbTelefoneEst,#InpPisEst{
+
+		margin-left: 30px;
+	}
+
+
+
+	#lbCpfEst,#lbNascimentoEst,#lbModalidadeEst,
+	#lbMatriculaEst,#lbCidadeEst,#lbEstadoEst,#lbEstadoEst
+	{
+
+		margin-left: 50px;/*,#lbNCurso  #lbProfessorEst  #lbTerminoEst  #lbDtRelatorioEst*/
+	}
+
+	#InpEstadoEst,#inpNCurso{
+
+		margin-left: 33px; /*,#lbEmpresaEst*/
+
+	}
+        
+        #lbDtRelatorioEst{
+            
+            margin-left: 28px;
+        }
+        
+        #lbTerminoEst{
+            
+            margin-left: 0px;
+        }
+        
+        #lbProfessorEst{
+            
+            margin-left: 0px;
+        }
+        
+        #lbEmpresaEst{
+            
+            margin-left: 52px;
+        }
+        
+        #lbInicioEst{
+            
+            margin-left: 35px;
+        }
+        
+        #lbNCurso{
+            
+            margin-left: 50px;
+        }
+
+	#InpAnoEst{
+
+		margin-left: 16px;
+	}
+        
+        #InpEmpresaEst{
+            
+            margin-left: 23px;
+        }
+	#InpCpfEst{
+
+		margin-left: 45px;
+	}
+
+	#inpEmailEst,#inpInicioEst{
+
+		margin-left:20px;
+	}
+        
+        #InpProfessorEst{
+            
+            margin-left: 0px;
+        }
+
+	#InpEnderecoEst{
+
+		margin-left: 30px;
+	}
+
+	#inpNomeEst,#InpCursoEst{
+
+		margin-left: 21px;
+
+	}
+
+	#InpMatriculaEst{
+
+		margin-left: 12px;
+	}
+
+	#inpTerminoEst{
+
+		margin-left: 25px;
+	}
+
+	
+	#inpRelatorioEst{
+
+		margin-left: 10px;
+
+	}
+
+#inpRelatorioEst,#inpNascimentoEst,
+#inpTerminoEst,#inpInicioEst{
+
+	width: 170px;
+
+}
+
+#btCadastrarEst{
+
+	margin-top: 70px;
+	position: absolute;
+	left: 600px;
+	width: 80px;
+}
+
+#btVoltar{
+
+	margin-top: 70px;
+	position: absolute;
+	left: 700px;
+	width: 80px;
+
+}
+
+
+/*===========================================================CADASTRAR PROFESSOR===============================================================*/
+	
+
+#divCabcalhoFormP{
+
+		border: 1px solid;
+		height: 50px;
+		margin-top: 60px;
+		width: 700px;
+		margin-left: 300px;
+		border-color: #006600;
+	}
+
+	#divFormP{
+
+		border: 1px solid;
+		height: 280px;
+		margin-top: 0px;
+		width: 700px;
+		margin-left: 300px;
+		padding-top: 30px;
+		border-color: #006600;
+		
+	}
+
+	#lbCadEst{
+
+		color: #0A5517;
+		font-size: 25px;
+		font-family: "open_sansextrabold", Arial, Helvetica, sans-serif;
+		margin-left: 500px;
+		margin-top: 15px;
+		position: absolute;
+
+	}
+
+	#lbCadProf{
+
+		color: #0A5517;
+		font-size: 25px;
+		font-family: "open_sansextrabold", Arial, Helvetica, sans-serif;
+		margin-left: 250px;
+		margin-top: 15px;
+		position: absolute;
+
+	}
+
+
+	#lbCpfProf,#lbIdProf,#lbAreaEst{
+
+		margin-left: 30px;
+	}
+
+	#InpIdProf{
+
+		margin-left: 13px;
+	}
+
+		#InpTelProf{
+
+			margin-left: 18px;
+		}
+	
+	
+	#divOrgFormP{
+
+		margin-left: 70px;
+		margin-top: 50px;
+	}
+
+	#btCadastrarProf{
+
+	margin-top: 100px;
+	position: absolute;
+	left: 550px;
+	width: 80px;
+}
+
+#btVoltarProf{
+
+	margin-top: 100px;
+	position: absolute;
+	left: 650px;
+	width: 80px;
+
+}
+
+/*==========================================================PAGE CADASTRAR CURSO==============================================================*/
+
+#lbCadCurso{
+
+		color: #0A5517;
+		font-size: 25px;
+		font-family: "open_sansextrabold", Arial, Helvetica, sans-serif;
+		margin-left: 300px;
+		margin-top: 15px;
+		position: absolute;
+
+	}
+#lbIdC{
+
+	margin-left: 25px;
+}
+
+#InpIdC{ /*Deletar*/
+
+	width: 70px;
+}
+
+#inpNomeC{
+
+	margin-left: 69px;
+        width: 290px;
+}
+
+#InpModalC{
+    
+   width: 290px;
+   margin-left: 35px;
+}
+
+#divOrgFormC{
+
+		margin-left: 135px;
+		margin-top: 80px;
+	}
+
+
+#btCadastrarC{
+
+	margin-top: 110px;
+	position: absolute;
+	left: 550px;
+	width: 80px;
+}
+
+#btVoltarC{
+
+	margin-top: 110px;
+	position: absolute;
+	left: 700px;
+	width: 80px;
+
+}
+
+/*==============================================PAGE CADASTRO DE EMPRESA=========================================*/
+
+
+	#inpNomeEmp{
+
+		width: 320px;
+                margin-left: 25px;
+	}
+
+	#InpIdEmp{
+
+		width: 70px;
+	}
+
+	#InpTelEmp{
+
+		width: 150px;
+                margin-left: 25px;
+	}
+
+	#lbRespEmp{
+
+		margin-left: 30px;
+	}
+
+	#btCadastrarEmp{
+
+	margin-top: 100px;
+	position: absolute;
+	left: 550px;
+	width: 80px;
+}
+
+#btVoltarEmp{
+
+	margin-top: 100px;
+	position: absolute;
+	left: 700px;
+	width: 80px;
+
+}
+
+#lbIdEmp{
+    
+    margin-left: 72px;
+}
+
+
+/*================================================PAGE CURSO====================================================*/
+
+#ExcluirCurso{
+
+	width: 25px;
+	
+}
+
+#EditarCurso{
+	
+	width: 25px;
+	margin-left:10px;
+	
+}
+
+
+/*================================================PAGE PROFESSOR====================================================*/
+
+#ExcluirProf,#EditarProf{
+
+	width: 25px;
+	position: absolute;
+}
+
+
+/*================================================PAGE EMPRESARIO====================================================*/
+
+#ExcluirEmp{
+
+   margin-top: 100px;
+   position: absolute;
+   left: 500px;
+   width: 80px;
+}
+
+#EditarEmp{
+    
+   margin-top: 100px;
+   position: absolute;
+   left: 600px;
+   width: 80px;
+   
+}
+
+/*================================================PAGE ESTAGIARIO====================================================*/
+
+#ExcluirEst,#EditarEst{
+
+	width: 25px;
+	position: absolute;
+}
+
+
+/*================================================PAGE DELETAR ESTAGIARIO====================================================*/
+
+#lbDelProf{
+    
+    color: #0A5517;
+    font-size: 25px;
+    font-family: "open_sansextrabold", Arial, Helvetica, sans-serif;
+    margin-left: 250px;
+    margin-top: 15px;
+    position: absolute;
+}
+
+#InpRespEmp{
+    
+    width: 320px;
+    
+}

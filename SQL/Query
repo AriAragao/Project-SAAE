@@ -1,0 +1,110 @@
+create database saee;
+
+use saee
+
+
+create table admMestre(
+
+	cpf varchar(14) not null,
+	usuario varchar(20) not null,
+	senha varchar(8) not null,
+    permissao varchar(10) not null,
+
+	constraint pk_CpfAdm primary key (cpf) 
+
+
+);
+create table adimin(
+
+	cpf varchar(14) not null,
+	usuario varchar(20) not null,
+	senha varchar(8) not null,
+
+	constraint pk_CpfAdm primary key (cpf) 
+
+
+);
+
+
+create table cursos(
+
+	id int AUTO_INCREMENT not null,
+	nomeC varchar(30) not null,
+	modalidadeC varchar(20) not null,
+
+	constraint pk_idCurso primary key (id) 
+
+
+);
+
+
+create table empresa(
+
+	id int AUTO_INCREMENT not null,
+	telEmp varchar(15) not null,
+	nomeEmp varchar(20) not null,
+	respEmp varchar(20) not null,
+
+	constraint pk_idEmpresa primary key (id) 
+
+
+)
+
+
+create table estagiario(
+
+	nomeEst varchar(30) not null,
+	emailEst varchar(20) not null,
+	enderecoEst varchar(40) not null,
+	cpfEst varchar(14) not null,
+	nascimento date not null,
+	matricula int not null,
+	estado varchar(20) not null,
+	pis int not null,
+	telefone varchar(15) not null,
+	cidade varchar(20) not null,
+
+	constraint pk_matricula primary key (matricula) 
+
+
+);
+
+
+
+
+
+
+create table professor(
+
+	id int AUTO_INCREMENT not null,
+	nomeProf varchar(30) not null,
+	cpfProf varchar(14) not null,
+	emailProf varchar(20) not null,
+	telProf varchar(15) not null,
+	areaProf varchar(15) not null,
+
+constraint pk_idProf primary key (id) 
+
+
+
+);
+
+
+create table estagio(
+
+	idCursoE int not null,
+	inicio date not null,
+	idProE int not null,
+	termino date not null,
+	relatorio date not null,
+	idEmpresaE int not null,
+	ano date  not null,
+	
+
+	constraint fk_idCursoE foreign key (idCursoE)references cursos(id),
+	constraint fk_idProE foreign key (idProE)references professor(id),
+	constraint fk_idEmpresaE foreign key (idEmpresaE)references empresa(id)
+
+
+);
+
