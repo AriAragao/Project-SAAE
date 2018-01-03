@@ -2,7 +2,7 @@
 <?php 
 
     //require_once '../classes/CursoBd.class.php';
- require_once 'Class/AdmBd.class.php'; 
+ #require_once 'Class/AdmBd.class.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -21,23 +21,6 @@
 </head>
 
 <body>
-
-    <?php 
-    
-        $curso = new CursoBd();
-        if(isset($_POST['btCadastrarC'])):
-          
-            $nome = $_POST['inpNomeC'];
-            $modalidade = $_POST['InpModC'];
-            
-            $curso->setNome($nome);
-            $curso->setModalidade($modalidade);
-            $curso->insert();
-            
-            
-        endif;
-        
-    ?>
 	
     <div id="Divtopo">
 
@@ -111,10 +94,6 @@
 
 	</div>
     
-    
-
-	
-
 </body>
 
 </html>
