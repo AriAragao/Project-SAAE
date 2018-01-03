@@ -39,7 +39,7 @@
             
             $result=$adm->VerificacaoCpf();
 
-            if(result==1){
+            if($result==1){
 
                 header('Location: altAdm.php');
                 echo $result;
@@ -117,7 +117,7 @@
                 
 
                <button id="ExcluirEmp" name="ExcluirEmp"> <a href="Excluir.php?from=empresa&id=<?php echo $row_empresa['id'] ?>&next=pgEmpresa" >Deletar cadastro </a></button> 
-               <button id="EditarEmp" name="altAdm"><a href="UpDelAdm.php?&next=UpDelAdm.php" > Alterar senha</a></button>
+               <button id="EditarEmp" name="altAdm"><a href="UpDelAdm.php?&next=UpDelAdm.php" > Alterar dados</a></button>
                <button id="btVoltarEmp"><a href="Index.php" class="ativa">Página inicial</a></button>
 
 
