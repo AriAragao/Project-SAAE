@@ -706,3 +706,27 @@ ul#listaMenu a{ /*Configuração dos links*/
     width: 320px;
     
 }
+
+
+/*================================================PAGE CADASTRAR ESTAGIARIO====================================================*/
+
+#NomeEst{
+
+	width: 320px;
+	
+
+}
+
+#lbMatricula{
+
+	position: absolute;
+    left: 730px;
+    width: 500px;
+}
+
+#matricula{
+
+	position: absolute;
+    left: 800px;
+}
+
