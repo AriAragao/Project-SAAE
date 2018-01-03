@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS `saae`.`Empresas` (
   `emp_nome` VARCHAR(100) NOT NULL,
   `emp_tel` VARCHAR(15) NOT NULL,
   `emp_responsavel` VARCHAR(50) NOT NULL,
+  `emp_tel_responsavel` VARCHAR(15) NOT NULL,
+  `emp_email_responsavel` VARCHAR(25) NOT NULL,
   PRIMARY KEY (`emp_codigo`))
 ENGINE = InnoDB;
 
@@ -56,29 +58,11 @@ CREATE TABLE IF NOT EXISTS `saae`.`Estagiarios` (
   `est_pis` VARCHAR(11) NOT NULL,
   `est_email` VARCHAR(250) NOT NULL,
   `est_tel` VARCHAR(15) NOT NULL,
+  `est_end` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`est_matricula`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-
--- -----------------------------------------------------
--- Table `saae`.`Enderecos`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `saae`.`Enderecos` (
-  `end_codigo` INT NOT NULL AUTO_INCREMENT,
-  `end_logradouro` VARCHAR(100) NOT NULL,
-  `end_cidade` VARCHAR(100) NOT NULL,
-  `end_estado` CHAR(2) NOT NULL,
-  `Estagiarios_est_matricula` INT NOT NULL,
-  PRIMARY KEY (`end_codigo`),
-  INDEX `fk_Enderecos_Estagiarios_idx` (`Estagiarios_est_matricula` ASC),
-  CONSTRAINT `fk_Enderecos_Estagiarios`
-    FOREIGN KEY (`Estagiarios_est_matricula`)
-    REFERENCES `saae`.`Estagiarios` (`est_matricula`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -104,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `saae`.`Estagios` (
   `est_inicio` DATE NOT NULL,
   `est_termino` DATE NOT NULL,
   `est_ano` DATE NOT NULL,
-  `est_rel` LONGTEXT NULL,
+  `est_rel` DATE NULL,
   `Estagiarios_est_matricula` INT NOT NULL,
   `Empresas_emp_codigo` INT NOT NULL,
   `Professores_prof_codigo` INT NOT NULL,
