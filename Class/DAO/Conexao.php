@@ -7,7 +7,7 @@ class Conexao
     
     const DSN = "mysql:host=localhost;dbname=saae";
     const USUARIO = "root";
-    const SENHA = "root";
+    const SENHA = "";
         
     public function conectar()
     {
