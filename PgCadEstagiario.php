@@ -62,13 +62,13 @@
                 <div id="divOrgFormP">
                     <form method="POST">
                         <label id="lbNomeEst">Nome</label>
-                        <input type="text" name="nome"  id=" nomeEst" autofocus > 
+                        <input type="text" name="nomeEst"  id=" nomeEst" autofocus > 
 
                         <label id="lbMatricula">Matricula</label>
 						<input type="text" name="matricula" id="matricula"> <br><br>
 
-						<label id="lbCpfUs">data de nascimento</label>
-						<input type="data" name="nascimento" > <br><br>
+						<label id="lbNascEst">data de nasc</label>
+						<input type="data" name="nascimento" id="nascEst"> <br><br>
 
 						<label id="lbCpfUs">CPF</label>
 						<input type="text" name="cpf" > <br><br>

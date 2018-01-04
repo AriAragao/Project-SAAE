@@ -710,10 +710,34 @@ ul#listaMenu a{ /*Configuração dos links*/
 
 /*================================================PAGE CADASTRAR ESTAGIARIO====================================================*/
 
-#NomeEst{
+#nomeEst{						/*DESCOBRIR PORQUE NÃO ESTA FUNCIONANADO*/
 
-	width: 5000px;
+	width: 20000px;/* n funciona */
 
+}
+
+#matricula{
+
+	width: 80px;
+	position: absolute;
+	left: 870px;
+}
+
+#lbMatricula{
+
+	position: absolute;
+	left: 800px;
+}
+
+#nascEst{
+
+	width: 120px;
+}
+
+#lbNascEst{
+
+	
+	color: blue;
 }
 
 
