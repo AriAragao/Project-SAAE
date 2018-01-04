@@ -11,7 +11,7 @@ class Estagiario {
     private $est_tel;
     private $est_end;
     
-    public function __construct($matricula = "", $nome = "", $dtnascimento = "", $cpf = "", $pis = "", $email = "", $tel = "", $end = "")
+    public function __construct($matricula = "", $nome = "", $dtnascimento = "", $cpf = "", $pis = "", $email = "", $tel = "", $endereco = "")
     {
         $this->setEst_matricula($matricula);
         $this->setEst_nome($nome);
@@ -20,7 +20,7 @@ class Estagiario {
         $this->setEst_pis($pis);
         $this->setEst_email($email);
         $this->setEst_tel($tel);
-        $this->setEst_end($end);
+        $this->setEst_end($endereco);
     }
     
     public function getEst_matricula() {

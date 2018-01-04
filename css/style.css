@@ -712,21 +712,9 @@ ul#listaMenu a{ /*Configuração dos links*/
 
 #NomeEst{
 
-	width: 320px;
-	
+	width: 5000px;
 
 }
 
-#lbMatricula{
 
-	position: absolute;
-    left: 730px;
-    width: 500px;
-}
-
-#matricula{
-
-	position: absolute;
-    left: 800px;
-}
 

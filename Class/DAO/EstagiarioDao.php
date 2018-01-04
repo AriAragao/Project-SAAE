@@ -49,10 +49,10 @@ class EstagiarioDao
         
     }
 
-    public function Selecionar(Administrador $adm) {
-        
+   // public function Selecionar(Administrador $adm) {
+        /*
         try {
-            $stmt = $this->conn->prepare("SELECT * FROM Administrador WHERE adm_usuario = :usuario AND adm_senha = :senha");
+            $stmt = $this->conn->prepare("SELECT * FROM estagiarios WHERE est_matricula = :matricula AND adm_senha = :senha");
             
             $parametros = [
                 ":usuario"  => $adm->getAdm_usuario(),
@@ -75,8 +75,8 @@ class EstagiarioDao
         } catch (PDOException $e) 
         {
             echo "ERRO: " . $e->getMessage();
-        }
-    }
+        }*/
+    //}
 
     public function SelecionarTodos() {
         

@@ -62,13 +62,13 @@
                 <div id="divOrgFormP">
                     <form method="POST">
                         <label id="lbNomeEst">Nome</label>
-                        <input type="text" name="nome"  id=" NomeEst"autofocus > 
+                        <input type="text" name="nome"  id=" nomeEst" autofocus > 
 
                         <label id="lbMatricula">Matricula</label>
 						<input type="text" name="matricula" id="matricula"> <br><br>
 
 						<label id="lbCpfUs">data de nascimento</label>
-						<input type="text" name="nascimento" > <br><br>
+						<input type="data" name="nascimento" > <br><br>
 
 						<label id="lbCpfUs">CPF</label>
 						<input type="text" name="cpf" > <br><br>
@@ -77,10 +77,10 @@
 						<input type="text" name="pis" > <br><br>
 
 						<label id="lbCpfUs">email</label>
-						<input type="text" name="email" > <br><br>
+						<input type="email" name="email" > <br><br>
 
 						<label id="lbCpfUs">Telefone</label>
-						<input type="text" name="tel" > <br><br>
+						<input type="tel" name="tel" > <br><br>
 
 						<label id="lbCpfUs">Endereço</label>
 						<input type="text" name="end" > <br><br>
@@ -117,7 +117,7 @@ if (isset($_POST["btCadastrar"]))
 
 
         
-    if ($EstDao->Cadastrar($est))
+    if ($estDao->Cadastrar($est))
     {
 ?>    
         <script type = "text/javascript">
