@@ -17,7 +17,7 @@ class EmpresaDao
     {
         
         try {
-            $stmt = $this->conn->prepare("INSERT INTO empresas VALUES (:nome,:tel,:resp,:telResp,:emailResp,:telResp)");
+            $stmt = $this->conn->prepare("INSERT INTO empresas VALUES (:codigo,nome,:tel,:resp,:telResp,:emailResp)");
             
             $parametros = [
                 ":codigo"   => null,

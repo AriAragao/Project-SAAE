@@ -64,7 +64,7 @@
                     <label id="lbNomeEmp">Empresa</label>
                     <input type="text" name="inpNomeEmp" id="inpNomeEmp"  > <br> <br>
                 
-                    <label id="lbNomeEmp">Responsavel</label>
+                    <label id="lbNomeEmp">Responsável</label>
                     <input type="text" name="InpRespEmp" id="InpRespEmp"> <br><br>
 
                     <label id="lbTelEmp">Telefone</label>

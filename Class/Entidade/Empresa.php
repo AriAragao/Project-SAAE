@@ -66,11 +66,11 @@ class Empresa {
     }    
     
     public function setEmp_responsavel($emp_responsavel) {
-        return $this->emp_responsavel = $emp_responsavel;
+         $this->emp_responsavel = $emp_responsavel;
     }
 
     public function setEmp_emailResp($emp_email_responsavel) {
-        return $this->emp_email_responsavel = $emp_email_responsavel;
+         $this->emp_email_responsavel = $emp_email_responsavel;
     }
 
 }
