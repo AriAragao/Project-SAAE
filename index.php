@@ -1,11 +1,58 @@
 <?php
-       
+    
+    session_start();
+
+    $_SESSION["logado"] = "invalid";
+
     require_once './Class/Entidade/Administrador.php';
     require_once './Class/DAO/AdministradorDao.php';
     
     $adm = new Administrador();
     $admDao = new AdministradorDao();
-    
+
+
+    if (isset($_POST["btLogar"]))
+    {
+        $adm->setAdm_usuario($_POST["usuario"]);
+        $adm->setAdm_senha($_POST["senha"]);
+        
+        $permissao = $admDao->Selecionar($adm);
+        
+        if ($permissao === "S")
+        {
+            $_SESSION["logado"] = "admMestre";
+            header("Location: CadAdm.php");
+            exit;
+            
+        } else if ($permissao === "N")
+        {
+            $_SESSION["logado"] = "adm";
+            header("Location: PgCadCurso.php");
+            exit;
+            
+        } else
+        {
+            ?>
+
+                <script type="text/javascript">
+                     alert("Usuário e/ou senha em branco ou inválido.");
+                </script>
+
+            <?php
+        }
+    }
+
+    if (isset($_GET["error"]))
+    {
+        ?>
+
+            <script type="text/javascript">
+                     alert("Você não tem permissao para acessar cadastro de administrador");
+            </script>
+
+        <?php
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -66,39 +113,10 @@
                     <input type="password" name="senha" id="inpSenhaLogin" ><br><br>
 
                     <input type="submit" name="btLogar" value="Login" id="btLogar">
-                    <button id="btCadAdm"><a href="CadAdm.php" class="ativa">Cadastrar</a></button>
-
+                    
                     <!--<a href="UpDelAdm.php" id="refEsqueci"> Opções do administrador</a>-->
-
                 </form>
-
             </div>
         </div>
     </body>
 </html>
-
-<?php
-
-if (isset($_POST["btLogar"]))
-{
-    $adm->setAdm_usuario($_POST["usuario"]);
-    $adm->setAdm_senha($_POST["senha"]);
-    
-    $permissao = $admDao->Selecionar($adm);
-    
-    if ($permissao === "S")
-    {
-      header("Location: CadAdm.php");
-        
-    } elseif ($permissao === "N")
-    {
-        header("Location: PgCadProfessor.php");
-    } else
-    {
-        ?>
-        <script type="text/javascript">
-            alert("Usuário ou senha inválido.");
-        </script>
-        <?php
-    }
-}

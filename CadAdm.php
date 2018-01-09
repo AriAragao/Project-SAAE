@@ -1,11 +1,20 @@
 <?php
+
+    session_start();
        
     require_once './Class/Entidade/Administrador.php';
     require_once './Class/DAO/AdministradorDao.php';
     
     $adm = new Administrador();
     $admDao = new AdministradorDao();
-       
+
+    if (isset($_SESSION["logado"]))
+    {
+        if ($_SESSION["logado"] !== "admMestre")
+        {
+            header("Location: index.php?error=acessInvalid");
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +78,7 @@
                         <label id="lbSenhaUs">Senha</label>
                         <input type="text" name="senha" id="inpEmailProf" placeholder="Máximo 8 digitos">
                         <input type="submit" name="btCadastrar" value="Cadastrar" id="btCadastrarProf">                        
-                        <button id="btVoltarProf"><a href="index.php" >Voltar</a></button>
+                        <button id="btVoltarProf"><a href="#">Ir para Sistema</a></button>
                     </form>
                 </div>
                 <div style="text-align: center">

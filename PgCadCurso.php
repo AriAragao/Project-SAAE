@@ -5,7 +5,6 @@
     
     $curso = new Curso();
     $cursoDao = new CursoDao();
-       
 ?>
 
 <!DOCTYPE html>
@@ -15,12 +14,11 @@
 
         <title>Administrador</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-    </head>
+</head>
 
-    <body>
-
+<body>
         <div id="Divtopo">
 
             <img src="img/logoIf.png" id="logoIf">
@@ -81,9 +79,8 @@
         </div>
     </body>
 </html>
-
+		
 <?php
-
 if (isset($_POST["btCadastrar"]))
 {
     $curso->setCurso_nome($_POST["nome"]);
