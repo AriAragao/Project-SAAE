@@ -113,7 +113,7 @@
                         echo "<td>".$curso["curso_codigo"]."</td>";
                         echo "<td>".$curso["curso_nome"]."</td>";
                         echo "<td>".$curso["curso_modalidade"]."</td>";
-                        echo '<td><a href="Editar.php?id='.$curso["curso_codigo"].'"> Editar </a>';
+                        echo '<td><a href="UpDelCurso.php?id='.$curso["curso_codigo"].'"> Editar </a>';
                         
                     }                    
            
