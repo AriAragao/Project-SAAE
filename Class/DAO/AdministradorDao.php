@@ -52,19 +52,8 @@ class AdministradorDao
                 ":senha"    => $adm->getAdm_senha(),
             ];
             $stmt->execute($parametros);                       
-            $rs = $stmt->fetchAll(PDO::FETCH_OBJ);
-            
-            foreach ($rs as $value)
-            {
-                if ($value->adm_mestre === "S") 
-                {
-                    return "S";
-                } else 
-                {
-                    return "N";
-                }
-            }
-            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        
         } catch (PDOException $e) 
         {
             echo "ERRO: " . $e->getMessage();
