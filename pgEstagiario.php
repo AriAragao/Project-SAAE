@@ -1,6 +1,10 @@
 <?php
 
-    require_once '../classes/conexao.class.php'; 
+    require_once './Class/Entidade/Administrador.php';
+    require_once './Class/DAO/AdministradorDao.php';
+    
+    $adm = new Administrador();
+    $admDao = new AdministradorDao();
    
 ?>
 
