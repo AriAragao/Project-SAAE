@@ -1,3 +1,10 @@
+<<<<<<< master
+
+<?php 
+
+    //require_once '../classes/CursoBd.class.php';
+ #require_once 'Class/AdmBd.class.php'; 
+=======
 <?php
        
     require_once './Class/Entidade/Curso.php';
@@ -6,6 +13,7 @@
     $curso = new Curso();
     $cursoDao = new CursoDao();
        
+>>>>>>> master
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +27,20 @@
 
     </head>
 
+<<<<<<< master
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+</head>
+
+<body>
+    
+    <div id="Divtopo">
+
+        <img src="img/logoIf.png" id="logoIf">
+        <span id="lbIfba">Instituto Federal da Bahia </span>
+=======
     <body>
+>>>>>>> master
 
         <div id="Divtopo">
 
@@ -82,7 +103,15 @@
     </body>
 </html>
 
+<<<<<<< master
+        
+
+    </div>
+    
+</body>
+=======
 <?php
+>>>>>>> master
 
 if (isset($_POST["btCadastrar"]))
 {
