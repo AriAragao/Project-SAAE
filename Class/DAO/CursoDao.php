@@ -74,8 +74,10 @@ class CursoDao
     public function SelecionarTodos() {
 
         $result_curso = "SELECT * FROM cursos ";
-        $resultado_curso = PDO -> prepare($result_curso);
-        resultado_curso-> execute();
+        $resultado_curso = $this->conn->prepare($result_curso);
+        $resultado_curso-> execute();
+
+        return $resultado_curso->fetchAll(PDO::FETCH_ASSOC);
         
     }
 

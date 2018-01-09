@@ -1,8 +1,12 @@
 
 <?php
 
- require_once 'Conexao.php';
- require_once './Class/DAO/CursoDao.php';
+    require_once './Class/DAO/CursoDao.php';
+
+    $curso = new CursoDao();
+
+    var_dump($curso->SelecionarTodos());
+
 ?>
 
 <!DOCTYPE html>
@@ -46,8 +50,7 @@
 
 </head>
 
-<body>
- 
+<body> 
     
     <div id="Divtopo">
 
@@ -102,19 +105,23 @@
         </thead>
 
         <tbody>
-            
-              <?php 
-            
-           
-            while ($line=mysqli_fetch_assoc($query)) { ?>
             <tr>
-                <td><?php echo $line['id']; ?></td>
-                <td><?php echo $line['nomeC']; ?></td>
-                <td><?php echo $line['modalidadeC']; ?></td>
-                <td><a href="UpDelCurso.php"><img src="img/latLixo.png" id="ExcluirCurso"> <img src="img/editar.png" id="EditarCurso"></a></td>
+                <?php 
                 
-            </tr>
-            <?php } ?>
+                    foreach($curso->SelecionarTodos() as $curso)
+                    {
+                        echo "<td>".$curso["curso_codigo"]."</td>";
+                        echo "<td>".$curso["curso_nome"]."</td>";
+                        echo "<td>".$curso["curso_modalidade"]."</td>";
+                        echo '<td><a href="Editar.php?id='.$curso["curso_codigo"].'"> Editar </a>';
+                        
+                    }                    
+           
+                ?>             
+                
+
+            <tr>
+            
         </tbody>
 
          
