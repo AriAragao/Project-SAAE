@@ -42,38 +42,21 @@ class CursoDao
         
     }
 
-    /*public function Selecionar(Administrador $adm) {
-        
-        try {
-            $stmt = $this->conn->prepare("SELECT * FROM Administrador WHERE adm_usuario = :usuario AND adm_senha = :senha");
-            
-            $parametros = [
-                ":usuario"  => $adm->getAdm_usuario(),
-                ":senha"    => $adm->getAdm_senha(),
-            ];
-            $stmt->execute($parametros);                       
-            $rs = $stmt->fetchAll(PDO::FETCH_OBJ);
-            
-            foreach ($rs as $value)
-            {
-                if ($value->adm_mestre === "S") 
-                {
-                    return "S";
-                } else 
-                {
-                    return "N";
-                }
-            }
-            
-        } catch (PDOException $e) 
-        {
-            echo "ERRO: " . $e->getMessage();
-        }
-    }*/
+    
 
     public function SelecionarTodos() {
 
         $result_curso = "SELECT * FROM cursos ";
+        $resultado_curso = $this->conn->prepare($result_curso);
+        $resultado_curso-> execute();
+
+        return $resultado_curso->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+
+    ublic function Selecionar($idC) {
+
+        $result_curso = "SELECT * FROM cursos WHERE curso_codigo = $idC";
         $resultado_curso = $this->conn->prepare($result_curso);
         $resultado_curso-> execute();
 

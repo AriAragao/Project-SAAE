@@ -1,16 +1,22 @@
 <?php
 
-    session_start();
-    require_once '../classes/conexao.class.php';
-    require_once '../classes/CursoBd.class.php';
+   require_once './Class/DAO/CursoDao.php';
+   require_once './Class/DAO/CursoDao.php';
+    
+   $curso = new CursoDao();
+   $cursoDao = new CursoDao();
 
-    $conn = new conexao;
+   $idC= $curso["curso_codigo"];
+    var_dump($curso->Selecionar($idC));
+
+
+    /*$conn = new conexao;
     $link = $conn->Conecta();
 
     
     $result_curso = "SELECT * FROM curso WHERE id = '4'";
     $resultado_curso = mysqli_query($link, $result_curso);
-    $row_curso = mysqli_fetch_assoc($resultado_curso);
+    $row_curso = mysqli_fetch_assoc($resultado_curso);  */
 
 ?>
 
@@ -32,20 +38,6 @@
 
 <body>
 
-    <?php 
-    
-        $curso = new CursoBd();
-        if(isset($_POST['EditarC'])){
-          
-            $nome = $_POST['inpNomeC'];
-            $modalidade = $_POST['InpModalC'];
-           
-            $curso->setNome($nome);
-            $curso->setModalidade($modalidade);
-            $curso->setId($id);
-            $curso->update($id);
-            
-            ?>
             
     <script>
     
@@ -111,31 +103,58 @@
 
              <form action=" " method="POST">
 
+                <label id="lbNomeC">Id</label>
+                <input type="text" name="inpIdC" id="inpIdC"  value="<?php echo $curso["curso_codigo"]; ?>"><br><br>
+
+
                 <label id="lbNomeC">Nome</label>
-                <input type="text" name="inpNomeC" id="inpNomeC" autofocus value="<?php echo $row_curso['nomeC']; ?>"><br><br>
+                <input type="text" name="inpNomeC" id="inpNomeC" autofocus value="<?php echo $curso["curso_nome"]; ?>"><br><br>
 
                 <label id="lbModC">Modalidade</label>
-                <input type="text" name="InpModalC" id="InpModalC" value="<?php echo $row_curso['modalidadeC']; ?>">
+                <input type="text" name="InpModalC" id="InpModalC" value="<?php echo $curso["curso_modalidade"]; ?>">
 
-                <button id="ExcluirEmp" name="ExcluirC"> <a href="Excluir.php?from=curso&id=<?php echo $row_curso['id'] ?>&next=pgCurso" >Deletar </a></button> 
+                
                 <button id="EditarEmp" name="EditarC"> Atualizar</button>
                 <button id="btVoltarEmp"><a href="pgCurso.php" class="ativa">Voltar</a></button>
 
               
-
-
              </form>
 
          </div>
 
         </div>
 +
-		
-
 	</div>
 
-	
 
 </body>
 
 </html>
+
+<?php 
+
+    if (isset($_POST["EditarC"])) {
+
+        $curso->setCurso_nome($_POST["inpNomeC"]);
+        $curso->setCurso_modalidade($_POST["InpModalC"]);
+        $curso->setCurso_codigo($_POST["inpIdC"]);
+
+        if ($cursoDao->Alterar($curso)) {
+            ?>    
+            <script type = "text/javascript">
+                document.getElementById("resultadoCadastro").innerHTML = "Cadastrado alterado com sucesso.";
+                document.getElementById("resultadoCadastro").style.color = "green";
+            </script>
+            <?php
+        } else {
+            ?>
+            <script type = "text/javascript">
+                document.getElementById("resultadoCadastro").innerHTML = "Erro ao alterar cadastro.";
+                document.getElementById("resultadoCadastro").style.color = "red";
+            </script>
+            <?php
+        }
+    }
+
+    }
+?>
