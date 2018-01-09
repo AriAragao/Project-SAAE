@@ -72,6 +72,10 @@ class CursoDao
     }*/
 
     public function SelecionarTodos() {
+
+        $result_curso = "SELECT * FROM cursos ";
+        $resultado_curso = PDO -> prepare($result_curso);
+        resultado_curso-> execute();
         
     }
 

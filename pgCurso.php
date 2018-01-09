@@ -1,8 +1,8 @@
 
 <?php
 
-   require_once '../classes/conexao.class.php'; 
-
+ require_once 'Conexao.php';
+ require_once './Class/DAO/CursoDao.php';
 ?>
 
 <!DOCTYPE html>
@@ -105,11 +105,7 @@
             
               <?php 
             
-            $conn = new conexao();
-            $link = $conn->Conecta();
-
-             $query = mysqli_query($link, "SELECT * FROM curso");
-            
+           
             while ($line=mysqli_fetch_assoc($query)) { ?>
             <tr>
                 <td><?php echo $line['id']; ?></td>
