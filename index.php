@@ -1,104 +1,95 @@
 <?php
-       
-    require_once './Class/Entidade/Administrador.php';
-    require_once './Class/DAO/AdministradorDao.php';
-    
-    $adm = new Administrador();
-    $admDao = new AdministradorDao();
-    
+
+session_start();
+
+require_once './Class/Entidade/Administrador.php';
+require_once './Class/DAO/AdministradorDao.php';
+
+$adm = new Administrador();
+$admDao = new AdministradorDao();
+
+if (filter_input(INPUT_POST, "btLogar")) 
+{
+    $adm->setAdm_usuario($_POST["usuario"]);
+    $adm->setAdm_senha($_POST["senha"]);
+
+    $permissao = $admDao->Selecionar($adm);
+        
+    if( $permissao[0]["adm_mestre"] === "S")
+    {
+        $_SESSION["usuario"] = $permissao[0]["adm_usuario"];
+        $_SESSION["id"] = $permissao[0]["adm_codigo"];
+        $_SESSION["mestre"] = $permissao[0]["adm_mestre"];
+        header("Location: CadAdm.php");
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <title>Login</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    </head>
+   <head>
+      <title>Login</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="css/style.css"/>
+   </head>
 
-    <body>
+   <body>
 
-        <div id="Divtopo">
+      <div id="Divtopo">
 
-            <img src="img/logoIf.png" id="logoIf">
-            <span id="lbIfba">Instituto Federal da Bahia </span>
+         <img src="img/logoIf.png" id="logoIf">
+         <span id="lbIfba">Instituto Federal da Bahia </span>
 
-        </div>
+      </div>
 
-        <div id="DivInicio">
-            <div id="DivTitulos">
+      <div id="DivInicio">
+         <div id="DivTitulos">
 
-                <span id="titulo">IFBA</span>
-                <h1 id="tituloCompleto" >Instituto Federal da Bahia</h1>
-                <span id="tituloCoes">COORDEENAÇÃO DE ESTÁGIO</span>
-            </div>   
-        </div>
+            <span id="titulo">IFBA</span>
+            <h1 id="tituloCompleto" >Instituto Federal da Bahia</h1>
+            <span id="tituloCoes">COORDEENAÇÃO DE ESTÁGIO</span>
+         </div>   
+      </div>
 
-        <!-- MENU -->
-        <div id="DivMenu">
+      <!-- MENU -->
+      <div id="DivMenu">
 
-            <ul id="listaMenu">
+         <ul id="listaMenu">
 
-                <li>Empresa | </li>
-                <li> Professor | </li>
-                <li> Curso | </li>
-                <li> Estágio | </li>
+            <li>Empresa | </li>
+            <li> Professor | </li>
+            <li> Curso | </li>
+            <li> Estágio | </li>
 
-            </ul>
+         </ul>
 
-        </div>
+      </div>
 
-        <!-- CORPO -->
-        <div id="DivCorpo">
+      <!-- CORPO -->
+      <div id="DivCorpo">
 
-            <label id="MsgInicial">*LOGIN OBRIGATORIO</label>
+         <label id="MsgInicial">*LOGIN OBRIGATORIO</label>
 
-            <div id="DivLogin">
+         <div id="DivLogin">
 
-                <img src="img/login.png" id="imgLogin">
-                <form action="index.php" method="POST" id="formLogin" name="formLogin">
+            <img src="img/login.png" id="imgLogin">
+            <form action="index.php" method="POST" id="formLogin" name="formLogin">
 
-                    <label id="lbUsuario">Usuario</label><br>
-                    <input type="text" name="usuario" id="inpNomeAdm" autofocus ><br><br>
+               <label id="lbUsuario">Usuario</label><br>
+               <input type="text" name="usuario" id="inpNomeAdm" autofocus ><br><br>
 
-                    <label id="lbSenha">Senha</label><br>
-                    <input type="password" name="senha" id="inpSenhaLogin" ><br><br>
+               <label id="lbSenha">Senha</label><br>
+               <input type="password" name="senha" id="inpSenhaLogin" ><br><br>
 
-                    <input type="submit" name="btLogar" value="Login" id="btLogar">
-                    <button id="btCadAdm"><a href="CadAdm.php" class="ativa">Cadastrar</a></button>
+               <input type="submit" name="btLogar" value="Login" id="btLogar">
+               <button id="btCadAdm"><a href="CadAdm.php" class="ativa">Cadastrar</a></button>
 
-                    <!--<a href="UpDelAdm.php" id="refEsqueci"> Opções do administrador</a>-->
+               <!--<a href="UpDelAdm.php" id="refEsqueci"> Opções do administrador</a>-->
 
-                </form>
+            </form>
 
-            </div>
-        </div>
-    </body>
+         </div>
+      </div>
+   </body>
 </html>
-
-<?php
-
-if (isset($_POST["btLogar"]))
-{
-    $adm->setAdm_usuario($_POST["usuario"]);
-    $adm->setAdm_senha($_POST["senha"]);
-    
-    $permissao = $admDao->Selecionar($adm);
-    
-    if ($permissao === "S")
-    {
-      header("Location: CadAdm.php");
-        
-    } elseif ($permissao === "N")
-    {
-        header("Location: PgCadProfessor.php");
-    } else
-    {
-        ?>
-        <script type="text/javascript">
-            alert("Usuário ou senha inválido.");
-        </script>
-        <?php
-    }
-}
