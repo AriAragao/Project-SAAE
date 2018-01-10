@@ -54,7 +54,7 @@ class CursoDao
         
     }
 
-    ublic function Selecionar($idC) {
+    public function Selecionar($idC) {
 
         $result_curso = "SELECT * FROM cursos WHERE curso_codigo = $idC";
         $resultado_curso = $this->conn->prepare($result_curso);
