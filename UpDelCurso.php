@@ -6,7 +6,8 @@
     $curso = new Curso();
     $cursoDao = new CursoDao();
 
-    $idC= $curso["curso_codigo"];
+
+   $idC = $_GET['id'];
     var_dump($curso->Selecionar($idC));
        
 ?>
